@@ -28,12 +28,15 @@
 			}
 			else
 			{
-				$sql="insert into room (roomname) values ('$room') ";
-				$msg="Your room is ready and you can chat now!";
-				echo '<script language="javascript">';
-				echo 'alert("'.$msg.'");';
-				echo 'window.location="http://localhost/chatroom/room.php?roomname=' .$room. '";';
-				echo '</script>';
+				$sql="insert into room (roomname) values ('$room'); ";
+				if(mysqli_query($conn,$sql))
+				{
+					$msg="Your room is ready and you can chat now!";
+					echo '<script language="javascript">';
+					echo 'alert("'.$msg.'");';
+					echo 'window.location="http://localhost/chatroom/room.php?roomname=' .$room. '";';
+					echo '</script>';
+				}
 			}
 		}
 		else
