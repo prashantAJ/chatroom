@@ -116,22 +116,18 @@ body {
 <script type="text/javascript">
 	var input = document.getElementById("usermsg");
 
-// Execute a function when the user releases a key on the keyboard
-input.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
+	input.addEventListener("keyup", function(event) {
+	  if (event.keyCode === 13) {
     document.getElementById("submitmsg").click();
-  }
-});
+	  }
+	});
 
 	$("#submitmsg").click(function(){
 		var clientmsg=$("#usermsg").val();
   		$.post("postmsg.php", {text: clientmsg,room:'<?php echo $roomname ?>',ip:'<?php echo $_SERVER['REMOTE_ADDR'] ?>'},
   function(data,status){
   	document.getElementsByClassName('anyClass')[0].innerHTML=data;});
+  		$("#usermsg").val("");
   return false;
 });
 </script>
