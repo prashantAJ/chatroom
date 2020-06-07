@@ -56,7 +56,8 @@
     <h1 class="display-4 font-weight-normal">My ChatRoom </h1>
     <p class="lead font-weight-normal">Chat with your friends without worrying about the chat logs. Now you chat chat with your friends with our free platform.</p>
     <form action="claim.php" method="post">
-      mychatroom.com/<input type="text" name="room">
+      <input class="form-group" type="text" name="room" placeholder="Your name.." required>
+      <input type="text" class="form-group" name="friend" placeholder="Chat with.." required>
       <button class="btn btn-outline-secondary" href="#">Claim Room</button>
     </form>
     
