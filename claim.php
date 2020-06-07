@@ -18,9 +18,9 @@
 		$result=mysqli_query($conn, $sql);
 		if($result)
 		{
-			if(mysqli_num_rows($result)>0)
+			if(mysqli_num_rows($result)==0)
 			{
-				$msg="Please choose different room. This room is already claimed.";
+				$msg="Please register your name to chat with your friends";
 				echo '<script language="javascript">';
 				echo 'alert("'.$msg.'");';
 				echo 'window.location="http://localhost/chatroom";';
@@ -28,15 +28,11 @@
 			}
 			else
 			{
-				$sql="insert into room (roomname) values ('$room'); ";
-				if(mysqli_query($conn,$sql))
-				{
-					$msg="Your room is ready and you can chat now!";
+				$msg="Your room is ready and you can chat now!";
 					echo '<script language="javascript">';
 					echo 'alert("'.$msg.'");';
 					echo 'window.location="http://localhost/chatroom/room.php?roomname=' .$room. '";';
 					echo '</script>';
-				}
 			}
 		}
 		else
