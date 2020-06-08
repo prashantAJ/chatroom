@@ -1,5 +1,6 @@
 <?php
 	$roomname=$_GET['roomname'];
+	$friend=$_GET['friendname'];
 
 	include 'db_connect.php';
 
@@ -117,7 +118,7 @@ body {
 	setInterval(runFunction,1000);
 	function runFunction()
 	{
-		$.post("htcont.php", {room:'<?php echo $roomname ?>'},
+		$.post("htcont.php", {room:'<?php echo $roomname ?>', friend:'<?php echo $friend ?>'},
 			function(data,status)
 			{
 				document.getElementsByClassName('anyClass')[0].innerHTML=data;

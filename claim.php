@@ -15,7 +15,7 @@
 		{
 			if(mysqli_num_rows($result)==0)
 			{
-				$msg="Please register your name to chat with your friends";
+				$msg="Please register your name to chat with your friends..";
 				echo '<script language="javascript">';
 				echo 'alert("'.$msg.'");';
 				echo 'window.location="http://localhost/chatroom";';
@@ -32,11 +32,19 @@
 					if(mysqli_num_rows($result)>0)
 					{
 
-						$msg="Your room is ready and you can chat now!";
+						$msg="Your room is ready and you can chat now..";
 							echo '<script language="javascript">';
 							echo 'alert("'.$msg.'");';
 							echo 'window.location="http://localhost/chatroom/room.php?roomname=' .$room.'&friendname='.$friend.'"';
 							echo '</script>';
+					}
+					else
+					{
+						$msg="Please enter valid name of your friend..";
+						echo '<script language="javascript">';
+						echo 'alert("'.$msg.'");';
+						echo 'window.location="http://localhost/chatroom";';
+						echo '</script>';
 					}
 				}
 				else
