@@ -32,14 +32,13 @@ body {
   margin: 0 auto;
   max-width: 800px;
   padding: 0 20px;
+
 }
 
 .container {
   border: 2px solid #dedede;
-  background-color: #f1f1f1;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px 0;
 }
 
 .darker {
@@ -53,19 +52,6 @@ body {
   display: table;
 }
 
-.container img {
-  float: left;
-  max-width: 60px;
-  width: 100%;
-  margin-right: 20px;
-  border-radius: 50%;
-}
-
-.container img.right {
-  float: right;
-  margin-left: 20px;
-  margin-right:0;
-}
 
 .time-right {
   float: right;
@@ -79,7 +65,15 @@ body {
 .anyClass
 {
 	height:350px;
+	background-color: #43a2ab;
 	overflow-y:scroll;
+
+}
+.navbar .dropdown-menu .form-control {
+    width: 200px;
+}
+ button:focus {
+    outline: 0;
 }
 </style>
 
@@ -87,12 +81,24 @@ body {
 
 <link href="css/product.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color:#43a2ab">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation" >
+    <div class="container">
+        <a class="navbar-brand" href="index.php">ChatRoom</a>
+        <div>
+            <ul class="nav navbar-nav" style="margin-right: -10px">
+                <li class="nav-item" style="text-align:right"><a href="index.php" class="nav-link">Home</a></li>
+            </ul>
 
-<h2>Chat Messages - <?php echo $roomname; ?></h2>
-<div class="anyClass" >
+        </div>
+    </div>
+</nav>
 
-</div>
+<h2 style="color:white;text-align:center;margin-top: 100px">Chats with <?php echo $friend;?></h2>
+	<div class="anyClass">
+	</div>
+
+
 <!--
 	<div class="container">
   	<img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
